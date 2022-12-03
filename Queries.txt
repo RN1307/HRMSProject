@@ -1,0 +1,16 @@
+
+
+
+                                                                                      SQL QUERIES USED
+
+                 insert into employee(firstname,lastname,desig,homeAadd,contactnum,hiredDate,location,deptId,email)values(?,?,?,?,?,?,?,?,?)
+                 select emp_id,firstname,lastname,desig,homeAadd,contactnum,hiredDate,location,deptId,email from employee
+	insert into payroll(emp_id,basic_salary,hra,da,ta)values(?,?,?,?,?)
+	select dname from department
+	delete from payroll where emp_id=?
+	delete from employee where emp_id=?
+                 update employee set desig =? where emp_id=?
+	update department set dname =? where deptId=?
+	update payroll set basic_salary=?,hra=0.2*basic_salary,da=0.18*basic_salary,ta=0.15*basic_salary where emp_id=?
+	select username,password,role from user
+	SELECT employee.emp_id,employee.firstname,employee.lastname,payroll.basic_salary,payroll.hra,payroll.da,payroll.ta FROM  employee INNER JOIN payroll ON employee.emp_id=payroll.emp_id  and employee.emp_id=?
